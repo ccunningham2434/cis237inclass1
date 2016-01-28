@@ -37,7 +37,7 @@ namespace cis237inclass1
             employeeArray[1] = new Employee("Stan", "Marsh", 532.00m);
             employeeArray[2] = new Employee("Kyle", "Broflowskie", 223.00m);
             employeeArray[3] = new Employee("Eric", "Cartman", 142.00m);
-            employeeArray[4] = new Employee("Kenny", "Something", 2.00m);
+            employeeArray[4] = new Employee("Kenny", "McCormick", 2.00m);
 
             // >Display everything in the array.
             foreach (Employee employee in employeeArray)
@@ -48,7 +48,38 @@ namespace cis237inclass1
                 }
             }
 
+
+
+
+
+            UserInterface ui = new UserInterface();
+
+            int choice = ui.GetUserInput();
+
+            while (choice != 2)
+            {
+                if (choice == 1)
+                {
+                    string allOutput = "";
+
+                    foreach (Employee employee in employeeArray)
+                    {
+                        if (employee != null)
+                        {
+                            allOutput += employee.ToString() + Environment.NewLine;
+                        }
+                    }
+
+                    ui.PrintAllOutput(allOutput);
+                }
+
+                choice = ui.GetUserInput();
+            }
+
+
         }
+
+
 
         // >Changes an integer.
         static void ChangeAnInt(int myNumber)
